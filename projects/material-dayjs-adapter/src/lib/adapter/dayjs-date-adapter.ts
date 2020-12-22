@@ -295,9 +295,9 @@ export class DayjsDateAdapter extends DateAdapter<Dayjs> {
 
   private dayJs(input?: any, format?: string, locale?: string): Dayjs {
     if (this.shouldUseUtc) {
-      return dayjs(input, { format, locale, utc: this.shouldUseUtc }, locale).utc();
+      return dayjs(input, format, locale).utc();
     } else {
-      return dayjs(input, { format, locale }, locale);
+      return dayjs(input, format, locale);
     }
   }
 
